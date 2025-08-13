@@ -7,8 +7,8 @@ It supports:
 - **Wind bias** via a tunable parameter σ
 - **Mass conservation** with fractional–integer grain accumulation
 - Avalanche statistics and **power-law** analysis
+- -The notebook can be opened directly in Google Colab, allowing you to run experiments without local setup.
 ![Example Outputs](fg2.png)
-The notebook can be opened directly in Google Colab, allowing you to run experiments without local setup.
 ---
 
 ## Run in Colab
@@ -41,14 +41,15 @@ Click the badge below to launch the notebook in Colab:
    jupyter notebook
    ```
 2. **In the notebook:**
-Set simulation parameters in the first cell:
-  ```python
+  Set simulation parameters in the first cell:
+   ```python
   L = 256          # grid size
   n_drops = 200000 # number of grains dropped
   burn_in = 140000 # start recording after this many drops
   sigma = 2.0      # wind bias strength.
    ```
 ## Programme design and flowchart
+The following shows the design of the experimental function that assist with the BTW simulation and metrics recording and testing
 ![fc](Flow_Chart1.png)
 
 ## Mathematical Background
