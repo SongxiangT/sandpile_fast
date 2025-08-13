@@ -15,7 +15,7 @@ The notebook can be opened directly in Google Colab, allowing you to run experim
 ## Run in Colab
 Click the badge below to launch the notebook in Colab:
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR_COLAB_LINK_HERE)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](./BTW_Statistical_expriment .ipynb)
 
 ---
 
