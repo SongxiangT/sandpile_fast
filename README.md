@@ -10,6 +10,17 @@ It supports:
 - -The notebook can be opened directly in Google Colab, allowing you to run experiments without local setup.
 ![Example Outputs](fg2.png)
 ---
+## Performance
+
+The simulation was benchmarked on a **256×256** grid with **200,000 grain drops** using a Tesla T4 GPU in Google Colab. The table below shows execution times and iteration rates for different wind bias strengths (σ), the total run time of sumation of 1,000,000 steps equals to around 6 minutes:
+
+| σ     | Drops Processed          | Time (minutes)  |
+|-------|--------------------------|--------|
+| 0.0   | 200,000 / 200,000         | 1:13   | 
+| 1.0   | 200,000 / 200,000         | 1:07   | 
+| 2.0   | 200,000 / 200,000         | 1:13   | 
+| 3.0   | 200,000 / 200,000         | 1:13   | 
+| 5.0   | 200,000 / 200,000         | 1:20   |
 
 ## Run in Colab
 Click the badge below to launch the notebook in Colab:
