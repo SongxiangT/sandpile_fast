@@ -40,3 +40,83 @@ Click the badge below to launch the notebook in Colab:
    cd sandpile_colab
    pip install -r requirements.txt
    jupyter notebook
+   ```
+2. **In the notebook:**
+Set simulation parameters in the first cell:
+  ```python
+  L = 256          # grid size
+  n_drops = 200000 # number of grains dropped
+  burn_in = 140000 # start recording after this many drops
+  sigma = 2.0      # wind bias strength.
+   ```
+
+## Flowchart 
+![fc](fg4.png)
+
+## Mathematical Background
+![math](fg1.png)
+At each step, the model updates according to the following rules:
+
+1. **Topple count**:
+
+$$
+T_{i,j} = \left\lfloor \frac{\mathrm{grid}_{i,j}}{4} \right\rfloor
+$$
+
+This represents the number of toppling events at site \((i,j)\).
+
+2. **Redistribution**:
+
+$$
+D = \left\lfloor \mathrm{conv2d}(T, K^*, \mathrm{padding}=1) \right\rfloor
+$$
+
+where \(K^*\) is the wind-biased redistribution kernel.
+
+3. **Grid update**:
+
+$$
+\mathrm{grid}_{t+1} = \mathrm{grid}_t - 4T + D
+$$
+
+ensuring **mass conservation** except for grains lost at the boundaries.
+
+### Wind-biased kernel
+
+$$
+K^* =
+\begin{pmatrix}
+0 & w_{\mathrm{base}} & 0 \\
+ w_{\mathrm{base}} & 0 & w_{\mathrm{right}} \\
+0 & w_{\mathrm{base}} & 0
+\end{pmatrix}, \quad
+w_{\mathrm{base}} = \frac{4}{4+\sigma}, \quad
+w_{\mathrm{right}} = \frac{4\sigma}{4+\sigma}
+$$
+
+The parameter \(\sigma\) controls the **strength of the wind bias**, increasing redistribution toward the right neighbor.
+
+---
+
+## Example Output
+
+- **Sandpile State**
+- ![Example Outputs](fg2.png)
+- **Avalanche Size Distribution**
+  ![sz](fg3.png)
+---
+
+## File Structure
+
+```
+├── sandpile_simulation.ipynb   # Main Colab/Notebook file
+├── requirements.txt            # Dependencies
+├── figs/                        # Example output plots
+└── README.md                    # This document
+```
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
