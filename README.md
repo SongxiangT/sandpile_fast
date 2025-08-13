@@ -51,7 +51,7 @@ Set simulation parameters in the first cell:
    ```
 
 ## Flowchart 
-![fc](fg4.png)
+![fc](Flow_Chart1.png)
 
 ## Mathematical Background
 ![math](fg1.png)
@@ -103,7 +103,7 @@ The parameter \(\sigma\) controls the **strength of the wind bias**, increasing 
 - **Sandpile State**
 - ![Example Outputs](fg2.png)
 - **Avalanche Size Distribution**
-  ![sz](fg3.png)
+  ![sz](fg3.jpeg)
 ---
 
 ## File Structure
