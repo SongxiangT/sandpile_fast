@@ -7,9 +7,8 @@ It supports:
 - **Wind bias** via a tunable parameter σ
 - **Mass conservation** with fractional–integer grain accumulation
 - Avalanche statistics and **power-law** analysis
-
+![Example Outputs](fg2.png)
 The notebook can be opened directly in Google Colab, allowing you to run experiments without local setup.
-
 ---
 
 ## Run in Colab
@@ -49,8 +48,7 @@ Set simulation parameters in the first cell:
   burn_in = 140000 # start recording after this many drops
   sigma = 2.0      # wind bias strength.
    ```
-
-## Flowchart 
+## Programme design and flowchart
 ![fc](Flow_Chart1.png)
 
 ## Mathematical Background
@@ -101,7 +99,6 @@ The parameter \(\sigma\) controls the **strength of the wind bias**, increasing 
 ## Example Output
 
 - **Sandpile State**
-- ![Example Outputs](fg2.png)
 - **Avalanche Size Distribution**
   ![sz](fg3.jpeg)
 ---
